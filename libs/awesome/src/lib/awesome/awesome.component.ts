@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'clean-nx-awesome',
@@ -9,8 +9,4 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./awesome.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class AwesomeComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AwesomeComponent {}
