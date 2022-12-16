@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>WolfSoko/nx-renovate-self-hosted:nrwl"
-  ]
+  "extends": ["github>WolfSoko/nx-renovate-self-hosted:nrwl"]
 }
