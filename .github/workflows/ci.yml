@@ -22,6 +22,24 @@ jobs:
         npx nx affected --target=lint --parallel=3
         npx nx affected --target=test --parallel=3 --ci --code-coverage
         npx nx affected --target=build --parallel=3
+      artifacts-path: ./coverage
+
+  codecov:
+    name: Coverage Report
+    needs: main
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Downloading artifacts'
+        uses: actions/download-artifact@v3
+        with:
+          name: nx-main-artifacts
+          path: ./coverage
+      - name: 'Codecov'
+        uses: 'codecov/codecov-action@v3.1.0'
+        if: hashFiles('coverage/**/*') != ''
+        with:
+          fail_ci_if_error: true
+          verbose: true
 
   agents:
     name: Nx Cloud - Agents
