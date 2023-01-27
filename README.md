@@ -1,6 +1,6 @@
 # nx-clean
 
-[![CI](https://github.com/WolfSoko/nx-renovate-self-hosted/actions/workflows/ci.yml/badge.svg)](https://github.com/WolfSoko/nx-renovate-self-hosted/actions/workflows/ci.yml)
+[![CI](https://github.com/WolfSoko/nx-clean/actions/workflows/ci.yml/badge.svg)](https://github.com/WolfSoko/nx-clean/actions/workflows/ci.yml)
 ![renovate](https://img.shields.io/badge/maintaied%20with-renovate-blue?logo=renovatebot)
 [![codecov](https://codecov.io/gh/WolfSoko/nx-clean/branch/main/graph/badge.svg)](https://codecov.io/gh/WolfSoko/nx-clean)
 
