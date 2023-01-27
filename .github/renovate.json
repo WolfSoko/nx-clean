@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":label(dependencies)",
+    "github>nx-squeezer/squeezer",
+    "github>nx-squeezer/squeezer:nrwlWorkspace",
+    ":assignee(WolfSoko)"
+  ],
+  "schedule": ["at any time"],
+  "automergeStrategy": "rebase",
+  "automerge": true,
+  "automergeType": "pr",
+  "platformAutomerge": true,
+  "prCreation": "immediate"
+}
