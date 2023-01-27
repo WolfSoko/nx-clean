@@ -2,10 +2,10 @@
   "name": "@clean-nx/awesome",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^15.0.4",
-    "@angular/core": "^15.0.4"
+    "@angular/common": "^15.1.2",
+    "@angular/core": "^15.1.2"
   },
   "dependencies": {
-    "tslib": "^2.4.1"
+    "tslib": "^2.5.0"
   }
 }
