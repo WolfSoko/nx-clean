@@ -28,6 +28,12 @@
       "files": ["*.html"],
       "extends": ["plugin:@nrwl/nx/angular-template"],
       "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["apps/cleaner/tsconfig.*?.json"]
+      }
     }
   ]
 }

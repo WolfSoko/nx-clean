@@ -12,6 +12,12 @@
         "@typescript-eslint/no-var-requires": "off",
         "no-undef": "off"
       }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["apps/cleaner-e2e/tsconfig.json"]
+      }
     }
   ]
 }
