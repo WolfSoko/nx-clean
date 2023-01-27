@@ -10,6 +10,7 @@ export default {
     },
   },
   coverageDirectory: '../../coverage/apps/cleaner',
+  coverageReporters: ['lcov'],
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

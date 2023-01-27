@@ -10,6 +10,7 @@ export default {
     },
   },
   coverageDirectory: '../../coverage/libs/awesome',
+  coverageReporters: ['lcov'],
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

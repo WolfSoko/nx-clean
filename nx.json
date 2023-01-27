@@ -57,5 +57,8 @@
       "style": "scss"
     }
   },
-  "defaultProject": "cleaner"
+  "defaultProject": "cleaner",
+  "implicitDependencies": {
+    ".codecov.yml": "*"
+  }
 }
