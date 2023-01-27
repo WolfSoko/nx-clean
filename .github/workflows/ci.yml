@@ -20,20 +20,21 @@ jobs:
         npx nx-cloud record -- npx nx format:check
       parallel-commands-on-agents: |
         npx nx affected --target=lint --parallel=3
-        npx nx affected --target=test --parallel=3 --ci --code-coverage
+        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=test --parallel=3 --ci --code-coverage
         npx nx affected --target=build --parallel=3
       artifacts-path: ./coverage
 
   codecov:
     name: Coverage Report
     needs: main
+    if: success() && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: 'Downloading artifacts'
         uses: actions/download-artifact@v3
         with:
           name: nx-main-artifacts
-          path: ./coverage
+          path: ./
       - name: 'Codecov'
         uses: 'codecov/codecov-action@v3.1.1'
         if: hashFiles('coverage/**/*') != ''
