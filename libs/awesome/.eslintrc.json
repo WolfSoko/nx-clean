@@ -32,7 +32,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": ["libs/awesome/tsconfig.*?.json"]
+        "project": ["libs/awesome/tsconfig*.json"]
       }
     }
   ]

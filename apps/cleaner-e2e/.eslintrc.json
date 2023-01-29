@@ -16,7 +16,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": ["apps/cleaner-e2e/tsconfig.json"]
+        "project": ["apps/cleaner-e2e/tsconfig*.json"]
       }
     }
   ]

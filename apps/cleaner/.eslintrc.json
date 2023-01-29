@@ -32,7 +32,7 @@
     {
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": ["apps/cleaner/tsconfig.*?.json"]
+        "project": ["apps/cleaner/tsconfig*.json"]
       }
     }
   ]
