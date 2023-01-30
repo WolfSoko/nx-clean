@@ -41,7 +41,7 @@
     "@nrwl/linter": "15.6.2",
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/workspace": "15.6.2",
-    "@nx-squeezer/workspace": "^1.2.0",
+    "@nx-squeezer/workspace": "^1.2.1",
     "@types/jest": "29.4.0",
     "@types/node": "18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
