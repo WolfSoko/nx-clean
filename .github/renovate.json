@@ -4,7 +4,7 @@
     "config:base",
     ":label(dependencies)",
     "github>nx-squeezer/squeezer",
-    "github>nx-squeezer/squeezer:nrwlWorkspace",
+    "github>WolfSoko/nx-renovate-self-hosted:nrwlWorkspace",
     ":assignee(WolfSoko)"
   ],
   "schedule": ["at any time"],
