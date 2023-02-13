@@ -8,11 +8,24 @@ on:
   pull_request:
 
 jobs:
+  node-version:
+    runs-on: ubuntu-latest
+    outputs:
+      node-version: ${{ steps.nvmrc.outputs.node_version }}
+    steps:
+      - uses: actions/checkout@v3
+
+      # Read node version from `.nvmrc` file
+      - id: nvmrc
+        uses: browniebroke/read-nvmrc-action@v1
+
   main:
+    needs: node-version
     name: Nx Cloud - Main Job
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.11
     with:
       number-of-agents: 3
+      node-version: ${{needs.node-version.outputs.node-version}}
       init-commands: |
         npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
@@ -45,7 +58,9 @@ jobs:
           verbose: true
 
   agents:
+    needs: node-version
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.11
     with:
       number-of-agents: 3
+      node-version: ${{needs.node-version.outputs.node-version}}
