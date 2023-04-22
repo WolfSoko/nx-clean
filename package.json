@@ -47,7 +47,7 @@
     "@nrwl/workspace": "15.8.7",
     "@nx-squeezer/workspace": "2.0.0",
     "@schematics/angular": "15.2.6",
-    "@types/jest": "29.5.0",
+    "@types/jest": "29.5.1",
     "@types/node": "18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
