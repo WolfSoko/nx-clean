@@ -46,7 +46,7 @@
     "@nrwl/nx-cloud": "15.2.3",
     "@nrwl/workspace": "15.8.7",
     "@nx-squeezer/workspace": "2.0.0",
-    "@schematics/angular": "15.2.7",
+    "@schematics/angular": "16.0.0",
     "@types/jest": "29.5.1",
     "@types/node": "18.16.3",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
