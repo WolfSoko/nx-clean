@@ -4,7 +4,7 @@
     "config:base",
     ":label(dependencies)",
     "github>nx-squeezer/squeezer",
-    "github>nx-squeezer/squeezer:nrwlWorkspace",
+    "github>nx-squeezer/squeezer:nxMonorepo",
     ":assignee(WolfSoko)"
   ],
   "schedule": ["at any time"],
