@@ -37,7 +37,7 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@delagen/eslint-plugin-deprecation": "1.3.2",
-    "@nx-squeezer/workspace": "3.1.1",
+    "@nx-squeezer/workspace": "4.0.0",
     "@schematics/angular": "16.1.5",
     "@types/jest": "29.5.3",
     "@types/node": "18.17.0",
