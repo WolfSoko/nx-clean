@@ -40,7 +40,7 @@
     "@nx-squeezer/workspace": "4.0.1",
     "@schematics/angular": "16.1.8",
     "@types/jest": "29.5.3",
-    "@types/node": "18.17.2",
+    "@types/node": "18.17.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "cypress": "^12.17.3",
