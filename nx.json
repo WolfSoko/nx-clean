@@ -7,10 +7,12 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"],
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "cache": true
     },
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js", "{workspaceRoot}/.codecov.yml"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "cache": true
     },
     "e2e": {
