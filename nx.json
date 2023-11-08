@@ -10,7 +10,7 @@
       "cache": true
     },
     "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js", "{workspaceRoot}/.codecov.yml"],
       "cache": true
     },
     "e2e": {
@@ -23,15 +23,14 @@
     }
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": ["{projectRoot}/**/*"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
-    ],
-    "sharedGlobals": []
+    ]
   },
   "cli": {
     "packageManager": "npm"
@@ -52,8 +51,5 @@
     }
   },
   "defaultProject": "cleaner",
-  "implicitDependencies": {
-    ".codecov.yml": "*"
-  },
   "nxCloudAccessToken": "NDVkNWIyNDktNDFkNC00YTkzLTkzMmQtNGM4NDVlOTY1MTFmfHJlYWQtd3JpdGU="
 }
