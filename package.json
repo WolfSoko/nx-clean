@@ -19,10 +19,10 @@
     "@angular/platform-browser": "16.2.0",
     "@angular/platform-browser-dynamic": "16.2.0",
     "@angular/router": "16.2.0",
+    "@nx/angular": "17.0.2",
     "rxjs": "~7.8.1",
     "tslib": "^2.5.0",
-    "zone.js": "0.13.1",
-    "@nx/angular": "17.0.2"
+    "zone.js": "0.13.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.0",
@@ -37,7 +37,11 @@
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@delagen/eslint-plugin-deprecation": "1.3.2",
-    "@nx-squeezer/workspace": "4.0.4",
+    "@nx/cypress": "17.0.2",
+    "@nx/eslint": "17.0.2",
+    "@nx/eslint-plugin": "17.0.2",
+    "@nx/jest": "17.0.2",
+    "@nx/workspace": "17.0.2",
     "@schematics/angular": "16.2.0",
     "@types/jest": "29.5.6",
     "@types/node": "20.8.9",
@@ -66,20 +70,11 @@
     "prettier": "^2.8.8",
     "ts-jest": "29.1.1",
     "ts-node": "10.9.1",
-    "typescript": "5.0.4",
-    "@nx/workspace": "17.0.2",
-    "@nx/eslint-plugin": "17.0.2",
-    "@nx/cypress": "17.0.2",
-    "@nx/jest": "17.0.2",
-    "@nx/eslint": "17.0.2"
+    "typescript": "5.0.4"
   },
   "overrides": {
     "@delagen/eslint-plugin-deprecation": {
       "typescript": "5.0.4"
-    },
-    "@nx-squeezer/workspace": {
-      "@nx/devkit": "^17.0.2",
-      "nx": "^17.0.2"
     }
   }
 }

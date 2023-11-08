@@ -699,6 +699,7 @@ nx affected:e2e</pre>
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,
+  standalone: true,
 })
 export class NxWelcomeComponent {
   @Input() title?: string;
