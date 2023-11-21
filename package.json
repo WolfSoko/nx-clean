@@ -74,7 +74,7 @@
   },
   "overrides": {
     "@delagen/eslint-plugin-deprecation": {
-      "typescript": "5.x.x"
+      "typescript": "5.x"
     }
   }
 }
