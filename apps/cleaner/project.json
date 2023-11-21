@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "cleaner:build:production"
+          "buildTarget": "cleaner:build:production"
         },
         "development": {
-          "browserTarget": "cleaner:build:development"
+          "buildTarget": "cleaner:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "cleaner:build"
+        "buildTarget": "cleaner:build"
       }
     },
     "lint": {
@@ -81,7 +81,6 @@
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/cleaner/jest.config.ts",
-        "passWithNoTests": true,
         "codeCoverage": true
       }
     }

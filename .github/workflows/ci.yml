@@ -32,9 +32,10 @@ jobs:
       parallel-commands: |
         npx nx-cloud record -- npx nx format:check
       parallel-commands-on-agents: |
-        npx nx affected --target=lint --parallel=3
-        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=test --parallel=3 --ci --code-coverage
-        npx nx affected --target=build --parallel=3
+        npx nx affected --target=build
+        npx nx affected --target=lint
+        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=test --ci
+        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=e2e --parallel=1 --ci
       artifacts-path: ./coverage
 
   codecov:
