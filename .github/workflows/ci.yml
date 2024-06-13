@@ -23,7 +23,7 @@ jobs:
   main:
     needs: node-version
     name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.14
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.15
     with:
       number-of-agents: 3
       node-version: ${{needs.node-version.outputs.node-version}}
@@ -51,7 +51,7 @@ jobs:
           name: nx-main-artifacts
           path: ./coverage
       - name: 'Codecov'
-        uses: 'codecov/codecov-action@v4.1.1'
+        uses: 'codecov/codecov-action@v4.5.0'
         if: hashFiles('coverage/**/*') != ''
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
   agents:
     needs: node-version
     name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.14
+    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.15
     with:
       number-of-agents: 3
       node-version: ${{needs.node-version.outputs.node-version}}
