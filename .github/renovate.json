@@ -1,10 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":label(dependencies)",
-    "github>nx-squeezer/squeezer",
-    "github>nx-squeezer/squeezer:nxMonorepo",
+    "github>WolfSoko/nx-renovate-self-hosted:nxMonorepo",
     ":assignee(WolfSoko)"
   ],
   "schedule": ["at any time"],
