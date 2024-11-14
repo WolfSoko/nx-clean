@@ -51,7 +51,7 @@ jobs:
           name: nx-main-artifacts
           path: ./coverage
       - name: 'Codecov'
-        uses: 'codecov/codecov-action@v4.6.0'
+        uses: 'codecov/codecov-action@v5.0.0'
         if: hashFiles('coverage/**/*') != ''
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
