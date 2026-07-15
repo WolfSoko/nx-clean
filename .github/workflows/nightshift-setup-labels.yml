@@ -1,6 +1,8 @@
 name: Create Nightshift Labels
 on:
-  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/nightshift-setup-labels.yml']
 
 permissions:
   issues: write
@@ -13,14 +15,14 @@ jobs:
         with:
           script: |
             const labels = [
-              { name: 'nightshift',          color: '0e1116', description: 'Nightshift automation' },
-              { name: 'nightshift:todo',      color: 'e4e669', description: 'Nightshift: identified, not started' },
+              { name: 'nightshift',            color: '0e1116', description: 'Nightshift automation' },
+              { name: 'nightshift:todo',        color: 'e4e669', description: 'Nightshift: identified, not started' },
               { name: 'nightshift:in-progress', color: '0075ca', description: 'Nightshift: actively being worked' },
-              { name: 'nightshift:blocked',   color: 'd93f0b', description: 'Nightshift: waiting for human input' },
-              { name: 'nightshift:in-review', color: '0e8a16', description: 'Nightshift: PR open, awaiting review' },
-              { name: 'nightshift:done',      color: '6f42c1', description: 'Nightshift: merged/done' },
-              { name: 'nightshift:wontfix',   color: 'ffffff', description: 'Nightshift: will not fix' },
-              { name: 'nightwatch',           color: '1d76db', description: 'Nightwatch monitoring' },
+              { name: 'nightshift:blocked',     color: 'd93f0b', description: 'Nightshift: waiting for human input' },
+              { name: 'nightshift:in-review',   color: '0e8a16', description: 'Nightshift: PR open, awaiting review' },
+              { name: 'nightshift:done',        color: '6f42c1', description: 'Nightshift: merged/done' },
+              { name: 'nightshift:wontfix',     color: 'ffffff', description: 'Nightshift: will not fix' },
+              { name: 'nightwatch',             color: '1d76db', description: 'Nightwatch monitoring' },
             ];
             for (const label of labels) {
               try {
