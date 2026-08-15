@@ -22,23 +22,36 @@ jobs:
 
   main:
     needs: node-version
-    name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.15
-    secrets:
+    name: Nx CI
+    runs-on: ubuntu-latest
+    env:
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-    with:
-      number-of-agents: 3
-      node-version: ${{needs.node-version.outputs.node-version}}
-      init-commands: |
-        npx nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
-      parallel-commands: |
-        npx nx-cloud record -- npx nx format:check
-      parallel-commands-on-agents: |
-        npx nx affected --target=build
-        npx nx affected --target=lint
-        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=test --ci
-        npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=e2e --parallel=1 --ci
-      artifacts-path: ./coverage
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: volta-cli/action@v4
+        with:
+          node-version: ${{ needs.node-version.outputs.node-version }}
+      - uses: nrwl/nx-set-shas@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Format check
+        run: npx nx format:check
+      - name: Build affected
+        run: npx nx affected --target=build
+      - name: Lint affected
+        run: npx nx affected --target=lint
+      - name: Test
+        run: npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=test --ci
+      - name: E2E
+        run: npx nx ${{ github.event_name == 'pull_request' && 'affected' || 'run-many --all' }} --target=e2e --parallel=1 --ci
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nx-main-artifacts
+          path: ./coverage
 
   codecov:
     name: Coverage Report
@@ -59,13 +72,3 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
           verbose: true
-
-  agents:
-    needs: node-version
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.15
-    secrets:
-      NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-    with:
-      number-of-agents: 3
-      node-version: ${{needs.node-version.outputs.node-version}}
