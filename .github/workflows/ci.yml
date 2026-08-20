@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: volta-cli/action@v4
+      - uses: volta-cli/action@v5
         with:
           node-version: ${{ needs.node-version.outputs.node-version }}
       - uses: nrwl/nx-set-shas@v4
