@@ -33,7 +33,7 @@ jobs:
       - uses: volta-cli/action@v5
         with:
           node-version: ${{ needs.node-version.outputs.node-version }}
-      - uses: nrwl/nx-set-shas@v4
+      - uses: nrwl/nx-set-shas@v5
       - name: Install dependencies
         run: npm ci
       - name: Format check
