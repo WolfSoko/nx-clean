@@ -15,20 +15,32 @@
       "inputs": ["default", "{workspaceRoot}/eslint.config.mjs"],
       "cache": true
     },
-    "@nx/jest:jest": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js", "{workspaceRoot}/.codecov.yml"],
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "cache": true,
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+    "test": [
+      {
+        "filter": {
+          "plugin": "@nx/jest/plugin"
+        },
+        "inputs": [
+          "default",
+          "^production",
+          "{workspaceRoot}/jest.preset.js",
+          "{workspaceRoot}/.codecov.yml",
+          {
+            "externalDependencies": ["jest", "@nx/jest", "ts-jest", "jest-preset-angular"]
+          }
+        ],
+        "configurations": {
+          "ci": {
+            "ci": true,
+            "coverage": true
+          }
+        },
+        "options": {
+          "passWithNoTests": true,
+          "coverage": true
         }
       }
-    }
+    ]
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*"],
@@ -60,5 +72,31 @@
   },
   "defaultProject": "cleaner",
   "useInferencePlugins": false,
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "plugins": [
+    {
+      "plugin": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "e2e",
+        "ciTargetName": "e2e-ci",
+        "componentTestingTargetName": "component-test",
+        "openTargetName": "open-cypress"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
+  ],
+  "affected": {
+    "legacy": true
+  }
 }
