@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+
 import { AwesomeComponent } from '@clean-nx/awesome';
 
 import { NxWelcomeComponent } from './nx-welcome.component';
