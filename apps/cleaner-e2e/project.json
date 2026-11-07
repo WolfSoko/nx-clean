@@ -7,23 +7,13 @@
   "implicitDependencies": ["cleaner"],
   "targets": {
     "e2e": {
-      "executor": "@nx/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/cleaner-e2e/cypress.config.ts",
-        "devServerTarget": "cleaner:serve:development",
-        "testingType": "e2e"
-      },
-      "configurations": {
-        "production": {
-          "devServerTarget": "cleaner:serve:production"
-        }
+        "config-file": "./cypress.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/cleaner-e2e/**/*.{js,ts}"]
+        "args": ["**/*.{js,ts}"]
       }
     }
   }
