@@ -62,7 +62,7 @@
     "jest": "30.5.2",
     "jest-environment-jsdom": "30.5.2",
     "jest-preset-angular": "17.0.3",
-    "lint-staged": "17.6.1",
+    "lint-staged": "17.6.2",
     "ng-packagr": "22.2.6",
     "nx": "23.3.1",
     "postcss": "^8.4.31",
